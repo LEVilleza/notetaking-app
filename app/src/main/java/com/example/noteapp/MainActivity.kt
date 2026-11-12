@@ -15,15 +15,21 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"))
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"))
+        tabLayout.addTab(tabLayout.newTab().setText("Date Selection"))
+        tabLayout.addTab(tabLayout.newTab().setText("Enter Note"))
+        tabLayout.addTab(tabLayout.newTab().setText("Notes"))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
         val viewPager = findViewById<ViewPager2>(R.id.pager)
-        val adapter = PageAdapter(this,2)
+        val adapter = PageAdapter(this,3)
         viewPager.setAdapter(adapter)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Page " + (position + 1)
+            tab.text = when (position){
+                0 -> "Date Selection"
+                1 -> "Enter Note"
+                2 -> "Notes"
+                else -> ""
+            }
         }.attach()
 
     }

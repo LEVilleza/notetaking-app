@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
-class Page2Fragment : Fragment() {
+class NoteFragment : Fragment() {
     lateinit var viewModel: MyViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -20,7 +20,7 @@ class Page2Fragment : Fragment() {
         val valueObserver = Observer<String> { newValue ->
             valueView.text = newValue.toString()
         }
-        viewModel.value.observe(viewLifecycleOwner, valueObserver)
+//        viewModel.value.observe(viewLifecycleOwner, valueObserver)
         return v;
     }
 }

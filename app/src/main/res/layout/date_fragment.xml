@@ -8,18 +8,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editValue"
+        <TextView
+            android:id="@+id/selectedDate_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:text="No date selected"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:padding="16dp" />
 
         <Button
-            android:id="@+id/vButton"
+            android:id="@+id/selectDate_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Choose Date" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
