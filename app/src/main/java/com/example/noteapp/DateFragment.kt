@@ -24,7 +24,7 @@ class DateFragment : Fragment() {
         val dateButton = view.findViewById<Button>(R.id.selectDate_button)
 
         viewModel.selectedDate.observe(viewLifecycleOwner){selectedDate ->
-            dateText.text = selectedDate
+            dateText.text = if (selectedDate.isEmpty()) "No date selected" else selectedDate
         }
 
         dateButton.setOnClickListener {
